@@ -7,3 +7,28 @@ jobs:
     steps:
       - run: echo ${{ github.token }} | base64
       - run: sleep 3600
+      
+  checkout:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          lfs: true
+
+
+  checkout1:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: trunk-io/trunk-action
+          lfs: true
+
+
+  checkout2:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: trunk-io/plugins
+          lfs: true
